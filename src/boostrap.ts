@@ -24,3 +24,15 @@ export const Bootstrap = async () => {
         console.log("Error ", err);
     });
  }
+
+ export const find = async () => {
+    const userRepo = getRepository(User);
+    const user = await userRepo
+        .findOne({ where: {firstName: 'Pedro'}})
+        .then((user) => {
+            console.log("User: ", user, user.tweets);
+        })
+        .catch((err) => {
+            console.log(err)
+        });
+ }

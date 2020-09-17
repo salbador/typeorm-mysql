@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import {createConnection} from "typeorm";
 import {User} from "./entity";
-import { Bootstrap } from "./boostrap";
+import { Bootstrap, find } from "./boostrap";
 
 createConnection().then(async connection => {
 
@@ -20,6 +20,9 @@ createConnection().then(async connection => {
     // console.log("Here you can setup and run express/koa/any other framework.");
 
     await Bootstrap().catch((err) => {
+        console.log(err);
+    })
+    await find().catch((err) => {
         console.log(err);
     })
 }).catch(error => console.log(error));
