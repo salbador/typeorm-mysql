@@ -13,7 +13,7 @@ export class Tweet {
     @Column({type: 'varchar', length: 300})
     content: string;
 
-    @ManyToOne((type) => User, (user) => user.tweets)
+    @ManyToOne(type => User, user => user.tweets)
     user: User;
 
 }

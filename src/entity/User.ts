@@ -16,7 +16,7 @@ export class User {
     @Column()
     age: number;
 
-    @OneToMany((type) => Tweet, (tweet) => tweet.user)
+    @OneToMany(type => Tweet, tweet => tweet.user)
     tweets: Tweet[];
 
     @Column()
